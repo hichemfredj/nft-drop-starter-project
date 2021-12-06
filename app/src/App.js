@@ -21,6 +21,10 @@ const App = () => {
       if (solana) {
         if (solana.isPhantom) {
           console.log('Phantom wallet found!');
+
+          const response = await solana.connect({ onlyIfTrusted : true });
+
+          console.log('Connected with Public key: ', response.publicKey.toString());
         }
 
       } else {
@@ -45,7 +49,7 @@ const App = () => {
     return () => window.removeEventListener('load', onLoad);
   }, []);
 
-  
+
   return (
     <div className="App">
       <div className="container">
