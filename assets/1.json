@@ -1,0 +1,19 @@
+{
+    "name": "JORDAN 1 RETRO BLUE OFF WHITE",
+    "symbol": "",
+    "image": "1.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "1.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "6grMy6trKfXZ1StWt6M12k75WG8oSUaoUhfVS5nqhAv",
+          "share": 100
+        }
+      ]
+    }
+  }
