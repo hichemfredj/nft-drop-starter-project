@@ -382,17 +382,24 @@ const CandyMachine = ({ walletAddress }) => {
   };
 
   return (
-    // Only show this if machineStats is available
     machineStats && (
       <div className="machine-container">
         {renderDropTimer()}
         <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
-        <button className="cta-button mint-button" onClick={mintToken} disabled={isMinting}>
-            Mint NFT
-        </button>
-        {/* If we have mints available in our array, let's render some items */}
-        {isLoadingMints && <p>LOADING MINTS...</p>}
+          {/* Check to see if these properties are equal! */}
+          {machineStats.itemsRedeemed === machineStats.itemsAvailable ? (
+            <p className="sub-text">Sold Out 🙊</p>
+          ) : (
+            <button
+              className="cta-button mint-button"
+              onClick={mintToken}
+              disabled={isMinting}
+            >
+              Mint NFT
+            </button>
+          )}
         {mints.length > 0 && renderMintedItems()}
+        {isLoadingMints && <p>LOADING MINTS...</p>}
       </div>
     )
   );
